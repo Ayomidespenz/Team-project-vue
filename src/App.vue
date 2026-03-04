@@ -1,8 +1,10 @@
 <script setup>
 import HelloWorld from './components/HelloWorld.vue'
+import Login from './auth/login.vue'
 </script>
 
 <template>
+  <Login/>
   <div>
     <a href="https://vite.dev" target="_blank">
      
