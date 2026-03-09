@@ -8,7 +8,7 @@ import BlogView from "../views/BlogView.vue"
 import ContactView from "../views/ContactView.vue"
 import AboutView from "../views/AboutView.vue"
 import ServiceView from "../views/ServiceView.vue"
-
+import SignupView from "../views/SignupView.vue" 
 
 const routes = [
   {
@@ -35,7 +35,7 @@ const routes = [
     component: ContactView
   },
    {
-    path: "/About",
+    path: "/about",
     name: "About",
     component: AboutView
   },
@@ -43,6 +43,11 @@ const routes = [
     path: "/services",
     name: "Service",
     component: ServiceView
+  },
+    {
+    path: "/signup",
+    name: "Signup",
+    component: SignupView
   },
 
   

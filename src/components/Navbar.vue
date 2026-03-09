@@ -40,23 +40,16 @@
             <router-link to="services" class="active">Services</router-link>
           </li>
           <li><router-link to="/blog" class="active">Blog</router-link></li>
-          <div class="pages">
-            <li>
-              <router-link to="pages" id="active" class="active"
-                >Pages</router-link
-              >
-            </li>
-            <div class="select">
-            <router-link to="/">Features</router-link>
-            <router-link to="">Services Details</router-link>
-            <router-link to="">Blog Details</router-link>
-            </div>
-
-          </div>
+         
 
           <li>
             <router-link to="contact" class="active">Contact</router-link>
           </li>
+             <li>
+              <router-link to="/login" id="active" class="active login"
+                >Login</router-link
+              >
+            </li>
           <li class="search active">
             <Icon icon="mdi:search" width="24" />
           </li>
@@ -71,8 +64,8 @@
         <router-link to="/about" @click="toggleMenu">About</router-link>
         <router-link to="/servives" @click="toggleMenu">Services</router-link>
         <router-link to="/blog" @click="toggleMenu">Blog</router-link>
-        <router-link to="/pages" @click="toggleMenu">Pages</router-link>
         <router-link to="/contact" @click="toggleMenu">Contact</router-link>
+        <router-link to="/login" @click="toggleMenu">Login</router-link>
       </div>
     </nav>
   </div>
@@ -124,10 +117,10 @@ export default {
   padding: 6px;
   color: #fff;
 }
-
+/* 
 .select router-link{
   display: block;
-}
+} */
 
 .top-bar {
   background: #182143;
@@ -178,6 +171,11 @@ export default {
   border-bottom: 3px solid #88c417;
   padding-bottom: 4px;
   
+}
+.login{
+  background-color: #88c417;
+  padding: 9px 17px;
+  border-radius: 25px;
 }
 
 .main-nav {

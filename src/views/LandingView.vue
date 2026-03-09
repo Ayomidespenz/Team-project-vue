@@ -4,7 +4,7 @@
     <HeroSection />
     <OurCompany />
     <DiscoverLoans/>
-     <People/>
+    <People />
     <CustomerSays/>
     <LatestPost/>
     <Home />
