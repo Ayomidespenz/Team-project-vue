@@ -8,13 +8,11 @@
     <CustomerSays/>
     <LatestPost/>
     <Home />
-    <!-- <Login /> -->
     <Footer/>
     </div>
 </template>
 
 <script>
-// import Navbar from './components/Navbar.vue';
 import Navbar from '../components/Navbar.vue';
 import Home from '../components/Home.vue';
 import Login from '../auth/login.vue'

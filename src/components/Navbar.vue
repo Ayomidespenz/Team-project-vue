@@ -39,7 +39,7 @@
           <li>
             <router-link to="services" class="active">Services</router-link>
           </li>
-          <li><router-link to="blog" class="active">Blog</router-link></li>
+          <li><router-link to="/blog" class="active">Blog</router-link></li>
           <div class="pages">
             <li>
               <router-link to="pages" id="active" class="active"
