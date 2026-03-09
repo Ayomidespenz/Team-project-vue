@@ -1,32 +1,20 @@
 <script setup>
-import HelloWorld from './components/HelloWorld.vue'
-import Login from './auth/login.vue'
+
+
 </script>
 
 <template>
-  <Login/>
-  <div>
-    <a href="https://vite.dev" target="_blank">
-     
-    </a>
-    <a href="https://vuejs.org/" target="_blank">
-     
-    </a>
-  </div>
-  <HelloWorld msg="Vite + Vueeeee" />
-</template>
 
-<style scoped>
-.logo {
-  height: 6em;
-  padding: 1.5em;
-  will-change: filter;
-  transition: filter 300ms;
-}
-.logo:hover {
-  filter: drop-shadow(0 0 2em #646cffaa);
-}
-.logo.vue:hover {
-  filter: drop-shadow(0 0 2em #42b883aa);
-}
-</style>
+  <div>
+
+    <router-view></router-view>
+  </div>
+
+</template>
+<script>
+
+
+</script>
+
+
+<style scoped></style>
