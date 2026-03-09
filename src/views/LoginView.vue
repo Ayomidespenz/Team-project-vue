@@ -1,8 +1,9 @@
 <template>
     <div>
         <Navbar />
-        <login />
+        <login />  
         <Footer />
+        
     </div>
 </template>
 
@@ -10,11 +11,15 @@
 import login from '../auth/login.vue';
 import Navbar from '../components/Navbar.vue';
 import Footer from '../components/Footer.vue';
+import Signup from '../auth/Signup.vue';
 export default {
     components: {
         login,
         Navbar,
-        Footer
+        Footer,
+        Signup
+        
+
     }
 }
 </script>

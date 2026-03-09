@@ -4,6 +4,7 @@
     <HeroSection />
     <OurCompany />
     <DiscoverLoans/>
+    <People />
     <CustomerSays/>
     <LatestPost/>
     <Home />
@@ -21,6 +22,7 @@ import OurCompany from '../components/OurCompany.vue';
 import DiscoverLoans from '../components/DiscoverLoans.vue';
 import CustomerSays from '../components/CustomerSays.vue';
 import LatestPost from '../components/LatestPost.vue';
+import People from '../components/People.vue';
 
 export default {
   components: {
@@ -32,7 +34,8 @@ export default {
     OurCompany,
     DiscoverLoans,
     CustomerSays,
-    LatestPost
+    LatestPost,
+    People
   }
 }
 </script>
