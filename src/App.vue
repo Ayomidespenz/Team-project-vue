@@ -4,14 +4,10 @@
 </script>
 
 <template>
- <Service/>
-  <About/>
-  <People/>
+
 
   <div>
-  <Navbar/>
-    <router-view></router-view>
-    <Footer/>
+   <router-view></router-view>
   </div>
 
 </template>

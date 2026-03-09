@@ -19,6 +19,7 @@ import DiscoverLoans from '../components/DiscoverLoans.vue';
 import CustomerSays from '../components/CustomerSays.vue';
 import LatestPost from '../components/LatestPost.vue';
 
+
 export default {
   components: {
     Home,
