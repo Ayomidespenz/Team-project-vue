@@ -4,7 +4,7 @@
     </div> -->
      <div class="service">
     
-        <h1 style="text-align: center; padding-top: 60px; color: white; ">
+        <h1 style="text-align: center; padding-top: 60px; color: white; font-size: 30px; ">
             About US
         </h1>
         </div>
@@ -22,15 +22,15 @@
     </section>
     <section class="sec2">
         <div>
-            <h1>Our Vision</h1>
+            <h1 style="font-size: 30px; font-weight: bold;">Our Vision</h1>
             <p style="width: 19rem; line-height: 23px;">The modern world is in a continuous movement and people everywhere are looking for quick, safe means of accessing accurate information. Prompt information is vital for people who want to keep the</p>
         </div>
         <div>
-            <h1>Our Mission</h1>
+            <h1 style="font-size: 30px;font-weight: bold;">Our Mission</h1>
             <p style="width: 19rem; line-height: 23px;">The modern world is in a continuous movement and people everywhere are looking for quick, safe means of accessing accurate information. Prompt information is vital for people who want to keep the</p>
         </div>
         <div>
-            <h1>
+            <h1 style="font-size: 30px; font-weight: bold;">
                 Our Value
             </h1>
             <p style="width: 19rem; line-height: 23px;">
@@ -39,7 +39,7 @@
     
     </section>
     <section class="sec3">
-         <h1 style="text-align: center; padding-top: 30px; color: white;">
+         <h1 style="text-align: center; padding-top: 50px; color: white; font-size: 30px; font-weight: bold;">
             Our History
          </h1>
          <p style="text-align: center; color: white;">
