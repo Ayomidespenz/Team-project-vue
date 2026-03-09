@@ -5,6 +5,7 @@ import { createRouter, createWebHistory } from "vue-router"
 import LoginView from "../views/LoginView.vue"
 import LandingView from "../views/LandingView.vue"
 import BlogView from "../views/BlogView.vue"
+import ContactView from "../views/ContactView.vue"
 
 
 const routes = [
@@ -25,6 +26,11 @@ const routes = [
     path: "/blog",
     name: "blog",
     component: BlogView
+  },
+      {
+    path: "/contact",
+    name: "contact",
+    component: ContactView
   },
 
   

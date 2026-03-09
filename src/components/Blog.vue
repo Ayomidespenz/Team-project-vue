@@ -1,7 +1,7 @@
 <template>
+  <Navbar/>
   <div class="blog-wrapper">
 
-    <!-- Left: Blog Cards -->
     <div class="blog-left">
 
       <div class="blog-card">
@@ -9,8 +9,8 @@
         <div class="blog-card-body">
           <h2>Get Best Advertiser In Your Side Pocket</h2>
           <div class="blog-meta">
-            <span> <Icon icon="mdi:calendar"/>19th March, 2019</span>
-            <span> <Icon icon="mdi:user"/> John Smith</span>
+            <span>19th March, 2019</span>
+            <span>John Smith</span>
           </div>
           <p>One of my favourite things I like to watch is the bloopers and outtakes that are shown of mistakes made during</p>
           <button class="read-btn">CONTINUE READING</button>
@@ -22,7 +22,7 @@
         <div class="blog-card-body">
           <h2>Internet Advertising Trends You Won't Be Disappointed</h2>
           <div class="blog-meta">
-            <span><Icon icon="mdi:calendar"/>19th March, 2019</span>
+            <span>19th March, 2019</span>
             <span>John Smith</span>
           </div>
           <p>More than 1 billion people frequent the Internet daily. Americans alone spent $69 billion buying things online in</p>
@@ -35,7 +35,7 @@
         <div class="blog-card-body">
           <h2>Freelance Design Tricks How To Get Away With Murder</h2>
           <div class="blog-meta">
-            <span ><Icon icon="mdi:calendar"/>19th March, 2019</span>
+            <span >19th March, 2019</span>
             <span>John Smith</span>
           </div>
           <p>More than 1 billion people frequent the Internet daily. Americans alone spent $69 billion buying things online in</p>
@@ -56,7 +56,6 @@
         </div>
       </div>
 
-      <!-- Pagination -->
       <div class="pagination">
         <a href="#">Pre</a>
         <a href="#" class="active">1</a>
@@ -69,7 +68,6 @@
 
     <div class="blog-right">
 
-      <!-- Search -->
       <div class="sidebar-section">
         <h4>Search</h4>
         <div class="search-box">
@@ -91,25 +89,24 @@
         </ul>
       </div>
 
-      <!-- Recent Posts -->
       <div class="sidebar-section">
         <h4>Recent Post</h4>
         <a href="#" class="recent-post">
-          <img src="" alt="Promote With Postcards" />
+          <img src="../assets/Blog-img/br-1.jpg" alt="Promote With Postcards" />
           <div>
             <h6>Promote With Postcards</h6>
             <p>19th March, 2019</p>
           </div>
         </a>
         <a href="#" class="recent-post">
-          <img src="" alt="Bidding Directories" />
+          <img src="../assets/Blog-img/br-2.jpg" alt="Bidding Directories" />
           <div>
             <h6>Bidding Directories</h6>
             <p>19th March, 2019</p>
           </div>
         </a>
         <a href="#" class="recent-post">
-          <img src="" alt="Kook 2 Director Add Url" />
+          <img src="../assets/Blog-img/br-3.jpg" alt="Kook 2 Director Add Url" />
           <div>
             <h6>Kook 2 Director Add Url</h6>
             <p>19th March, 2019</p>
@@ -147,10 +144,21 @@
 
     </div>
   </div>
+  <Footer/>
 </template>
 
 <script>
 import { Icon } from '@iconify/vue';
+import Navbar from '../components/Navbar.vue';
+import Footer from '../components/Footer.vue'
+
+export default {
+  components: {
+    Navbar,
+    Footer
+  }
+}
+
 
 
 </script>
@@ -212,6 +220,7 @@ import { Icon } from '@iconify/vue';
 }
 
 .read-btn {
+  background-color: #88c417;
   color: black;
   border: none;
   padding: 10px 24px;
@@ -224,7 +233,7 @@ import { Icon } from '@iconify/vue';
 }
 
 .read-btn:hover {
-  background: #1558b0;
+  background:#6d9e13;
 }
 
 /* Pagination */
@@ -245,9 +254,9 @@ import { Icon } from '@iconify/vue';
 
 .pagination a.active,
 .pagination a:hover {
-  background: #1a73e8;
+  background:#88c417;
   color: #fff;
-  border-color: #1a73e8;
+  border-color:#88c417;
 }
 .blog-right{
   padding: 10px;
@@ -287,7 +296,7 @@ import { Icon } from '@iconify/vue';
 
 .search-box button {
   padding: 0 14px;
-  background: #1a73e8;
+  background:#88c417;
   color: white;
   border: none;
   cursor: pointer;
@@ -372,9 +381,9 @@ import { Icon } from '@iconify/vue';
 }
 
 .tag:hover {
-  background: #1a73e8;
+  background:#88c417;
   color: #fff;
-  border-color: #1a73e8;
+  border-color:#88c417;
 }
 
 /* Socials */
