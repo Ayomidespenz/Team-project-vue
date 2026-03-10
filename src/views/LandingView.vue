@@ -35,7 +35,7 @@ export default {
     DiscoverLoans,
     CustomerSays,
     LatestPost,
-    People
+    People,
   }
 }
 </script>
