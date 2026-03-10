@@ -1,6 +1,9 @@
 <template>
     <div class="layout">
- <Sidebar/>
+      <div class="side-bar">
+
+        <Sidebar/>
+      </div>
  <div class="main-content">
  <DashboardContent/>
  </div>
@@ -25,13 +28,12 @@ import Sidebar from '../dashboard/Sidebar.vue'
 
 <style scoped>
 .layout {
-  display: flex;
   margin-top: 90px;
 }
 
-.main-content {
-  margin-left: 300px;
-  flex: 1;
+.main-content { 
   min-width: 0;
+}
+.side-bar{
 }
 </style>
