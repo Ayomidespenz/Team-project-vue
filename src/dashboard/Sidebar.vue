@@ -1,8 +1,6 @@
 <template>
-  <nav class="navbar">
-    <div class="navbar-left">
-      <input type="search" placeholder="Search..." class="search-input" />
-    </div>
+  <nav class="navbar" :class="{ 'navbar-expanded': isCollapsed }">
+          
     <div class="navbar-right">
       <ul>
         <li>
@@ -25,14 +23,11 @@
     </div>
   </div>
 </div>
-
-
-
-
-      </ul>
+ </ul>
     </div>
   </nav>
-  <nav class="side-bar">
+ 
+  <nav class="side-bar" :class="{ 'collapsed': isCollapsed }">
     <div class="logo">
           <Icon
             class="animate__animated animate__heartBeat"
@@ -45,7 +40,7 @@
         <div class="org">
           <img src="../dashboard/dashboard-img/organization.png" alt="">
           <label for="org"></label>
-          <select name="org" id="org">
+          <select  v-show="!isCollapsed" name="org" id="org">
     <option value="Switch Organization">Switch Organization</option>
     <option value="Organization 1">Organization 1</option>
     <option value="Organization 2">Organization 2</option>
@@ -54,7 +49,7 @@
         <hr>
         <div class="dash">
           <img src="../dashboard/dashboard-img/decision.png" alt="">
-          <h2>
+          <h2  v-show="!isCollapsed">
             Dashboard
           </h2>
         </div>
@@ -62,95 +57,117 @@
 
         <div class="user">
           <img src="../dashboard/dashboard-img/user.png" alt="">
-          <h2>Users</h2>
+          <h2  v-show="!isCollapsed">Users</h2>
         </div>
         <div class="user">
           <img src="../dashboard/dashboard-img/guarantor.png" alt="">
-          <h2>Guarantor</h2>
+          <h2  v-show="!isCollapsed">Guarantor</h2>
         </div>
          <div class="user">
           <img src="../dashboard/dashboard-img/loan.png" alt="">
-          <h2>Loans</h2>
+          <h2  v-show="!isCollapsed">Loans</h2>
         </div>
         <div class="user">
           <img src="../dashboard/dashboard-img/decision.png" alt="">
-          <h2>Decision Models</h2>
+          <h2  v-show="!isCollapsed">Decision Models</h2>
         </div>
         <div class="user">
           <img src="../dashboard/dashboard-img/savings.png" alt="">
-          <h2>Savings</h2>
+          <h2  v-show="!isCollapsed">Savings</h2>
         </div>
         <div class="user">
           <img src="../dashboard/dashboard-img/request.png" alt="">
-          <h2>Loan Requset</h2>
+          <h2  v-show="!isCollapsed">Loan Requset</h2>
         </div>
         <div class="user">
           <img src="../dashboard/dashboard-img/whitelist.png" alt="">
-          <h2>Whitelist</h2>
+          <h2  v-show="!isCollapsed">Whitelist</h2>
         </div>
         <div class="user">
           <img src="../dashboard/dashboard-img/karma.png" alt="">
-          <h2>Karma</h2>
+          <h2  v-show="!isCollapsed">Karma</h2>
         </div>
          <h2 style="padding: 15px 25px ;">BUSINESSES</h2>
          <div class="user">
           <img src="../dashboard/dashboard-img/organization11.png" alt="">
-          <h2>Organization</h2>
+          <h2  v-show="!isCollapsed">Organization</h2>
         </div>
          <div class="user">
           <img src="../dashboard/dashboard-img/l-product.png" alt="">
-          <h2>Loan Products</h2>
+          <h2  v-show="!isCollapsed">Loan Products</h2>
         </div>
         <div class="user">
           <img src="../dashboard/dashboard-img/s-prod.png" alt="">
-          <h2>Savings Product</h2>
+          <h2  v-show="!isCollapsed">Savings Product</h2>
         </div>
          <div class="user">
           <img src="../dashboard/dashboard-img/fees.png" alt="">
-          <h2>Fees and Charges</h2>
+          <h2  v-show="!isCollapsed">Fees and Charges</h2>
         </div>
         <div class="user">
           <img src="../dashboard/dashboard-img/transaction.png" alt="">
-          <h2>Transaction</h2>
+          <h2  v-show="!isCollapsed">Transaction</h2>
         </div>
         <div class="user">
           <img src="../dashboard/dashboard-img/service.png" alt="">
-          <h2>Services</h2>
+          <h2  v-show="!isCollapsed">Services</h2>
         </div>
         <div class="user">
           <img src="../dashboard/dashboard-img/s-account.png" alt="">
-          <h2>Service Account</h2>
+          <h2  v-show="!isCollapsed">Service Account</h2>
         </div>
         <div class="user">
           <img src="../dashboard/dashboard-img/savings.png" alt="">
-          <h2>Settlement</h2>
+          <h2  v-show="!isCollapsed">Settlement</h2>
         </div>
          <div class="user">
           <img src="../dashboard/dashboard-img/report.png" alt="">
-          <h2>Report</h2>
+          <h2  v-show="!isCollapsed">Report</h2>
         </div>
          <h2 style="padding: 15px 25px ;">Settings</h2>
          <div class="user">
           <img src="../dashboard/dashboard-img/preferrence.png" alt="">
-          <h2>Prefference</h2>
+          <h2  v-show="!isCollapsed">Prefference</h2>
         </div>
         <div class="user">
           <img src="../dashboard/dashboard-img/fee-pricing.png" alt="">
-          <h2>Fees and pricing</h2>
+          <h2  v-show="!isCollapsed">Fees and pricing</h2>
         </div>
         <div class="user">
           <img src="../dashboard/dashboard-img/audit-log.png" alt="">
-          <h2>Audit Logs</h2>
+          <h2  v-show="!isCollapsed">Audit Logs</h2>
         </div>
+
+        <div class="navbar-left">
+  <button @click="toggleSidebar" class="toggle-btn">
+    <Icon :icon="isCollapsed ? 'mdi:menu' : 'mdi:menu-open'" width="24" />
+  </button>
+  <!-- <input type="search" placeholder="Search..." class="search-input" /> -->
+</div>
+
+        
+
+     
         
   </nav>
 </template>
 
-<script>
+<script setup>
+import { ref } from 'vue';
+import { Icon } from '@iconify/vue';
 
+const isCollapsed = ref(false);
+
+const toggleSidebar = () => {
+  isCollapsed.value = !isCollapsed.value;
+};
 </script>
 
 <style scoped>
+.side-bar.collapsed {
+  width: 80px; 
+border: 2px solid red;
+}
 .org-box {
   display: flex;
   align-items: center;
@@ -167,8 +184,6 @@
   height: 40px;
   border-radius: 50%;
 }
-
-/* Dropdown Logic */
 .dropdown {
   position: relative;
   display: inline-block;
@@ -249,7 +264,7 @@
       top:0 ;
       overflow-y: auto;
       z-index: 2;
-      /* border: 2px solid red; */
+      border: 2px solid red;
 }
 .logo {
   gap: 10px;
@@ -311,5 +326,36 @@ display: flex;
 }
 .user:hover {
   background-color: white;
+}
+.toggle-btn {
+  background: none;
+  border: none;
+  cursor: pointer;
+  margin-right: 15px;
+  color: #88c417;
+}
+
+/* Ensure icons stay centered when collapsed */
+.user, .dash, .org {
+  /* justify-content: center; */
+  padding: 10px;
+}
+
+.side-bar.collapsed h2, 
+.side-bar.collapsed select {
+  display: none;
+}
+.navbar-expanded {
+  /* left: 80px; */
+  width: calc(100% - 80px);
+}
+.side-bar.collapsed {
+  width: 80px; 
+  /* Width for icons only */
+}
+.side-bar {
+  width: 300px;
+  transition: width 0.3s ease; /* Smooth transition */
+  /* ... existing styles ... */
 }
 </style>
