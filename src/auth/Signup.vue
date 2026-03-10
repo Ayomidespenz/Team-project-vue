@@ -47,7 +47,6 @@
 
       <p class="mt-10 text-center text-sm/6 text-gray-400">
         Already have an account?
-        {{ ' ' }}
        <router-link to="/login" > <a href="#" class="font-semibold text-[#7ed321]">Log in</a></router-link> 
       </p>
     </div>
