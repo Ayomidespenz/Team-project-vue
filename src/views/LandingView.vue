@@ -1,14 +1,14 @@
 <template>
     <div>
-    <Navbar />
-    <HeroSection />
-    <OurCompany />
-    <DiscoverLoans/>
-    <People />
-    <CustomerSays/>
-    <LatestPost/>
-    <Home />
-    <Footer/>
+      <Navbar />
+      <HeroSection />
+      <OurCompany />
+      <DiscoverLoans/>
+      <People />
+      <CustomerSays/>
+      <LatestPost/>
+      <Home />
+      <Footer/>
     </div>
 </template>
 
