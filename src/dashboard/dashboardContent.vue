@@ -96,11 +96,11 @@
                   <icon icon="mdi:eye" />
                   View Details
                 </div>
-                <div class="dropdown-item" >
+                <div class="dropdown-item" @click="blacklistUser(user)">
                   <icon icon="mdi:user-cancel" />
                   Blacklist User
                 </div>
-                <div class="dropdown-item" >
+                <div class="dropdown-item" @click="activateUser(user)" >
                   <icon icon="mdi:user-check" />
                   Activate User
                 </div>
@@ -145,11 +145,11 @@ export default {
       this.$router.push(`/users/${user.id}`);
     },
     blacklistUser(user) {
-      user.status = "Blacklisted";
+      user.status = "blacklisted";
       this.activeMenu = null;
     },
     activateUser(user) {
-      user.status = "Active";
+      user.status = "active";
       this.activeMenu = null;
     },
   },

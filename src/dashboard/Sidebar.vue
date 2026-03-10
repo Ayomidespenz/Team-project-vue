@@ -245,6 +245,6 @@ display: flex;
   height: 20px;
 }
 .user:hover {
-  background-color: white;
+  background-color:#87c4175b ;
 }
 </style>
