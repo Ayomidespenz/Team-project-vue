@@ -18,8 +18,8 @@
     <div class="dropdown">
       <button class="dropbtn">▼</button>
       <div class="dropdown-content">
-        <router-link to="/profile">Profile</router-link>
-        <router-link to="/settings">Settings</router-link>
+        <router-link to="#">Profile</router-link>
+        <router-link to="#">Settings</router-link>
         <router-link to="/login">Logout</router-link>
       </div>
     </div>
