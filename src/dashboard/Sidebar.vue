@@ -11,19 +11,21 @@
         <li>
          <img src="../dashboard/dashboard-img/bell.png" alt="">
         </li>
-         <div class="org">
-          <img src="../dashboard/dashboard-img/organization.png" alt="">
-          <h2>Adedoyin</h2>
-          <label for="org"></label>
-          <select name="org" id="org"> 
-    <!-- <option value="Switch Organization"></option> -->
-    <option value=""><router-link to="/">
-      
-    </router-link>profile</option>
-    <option value="">settings</option>
-    <option value="">Logout</option>
-  </select>
+         <div class="org-container">
+  <div class="org-box">
+    <img src="../dashboard/dashboard-img/user-icon.png" alt="org-icon">
+    <h2>Adedoyin</h2>
+    <div class="dropdown">
+      <button class="dropbtn">▼</button>
+      <div class="dropdown-content">
+        <router-link to="/profile">Profile</router-link>
+        <router-link to="/settings">Settings</router-link>
+        <router-link to="/login">Logout</router-link>
+      </div>
+    </div>
+  </div>
 </div>
+
 
 
 
@@ -149,6 +151,53 @@
 </script>
 
 <style scoped>
+.org-box {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+  border: 1px solid #ccc;
+  padding: 10px;
+  border-radius: 8px;
+  width: fit-content;
+  margin-left: 30px;
+}
+
+.org-box img {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+}
+
+/* Dropdown Logic */
+.dropdown {
+  position: relative;
+  display: inline-block;
+}
+
+.dropdown-content {
+  display: none;
+  position: absolute;
+  background-color: #f9f9f9;
+  min-width: 120px;
+  box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+  z-index: 1;
+  right: 5px;
+}
+
+.dropdown-content a {
+  color: black;
+  padding: 12px 16px;
+  text-decoration: none;
+  display: block;
+}
+
+.dropdown-content a:hover { background-color: #f1f1f1; }
+
+/* Show menu on hover */
+.dropdown:hover .dropdown-content {
+  display: block;
+}
+
 .navbar {
     height: 90px;
     width: 100%;
