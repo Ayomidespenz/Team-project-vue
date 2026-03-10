@@ -9,6 +9,8 @@ import ContactView from "../views/ContactView.vue"
 import AboutView from "../views/AboutView.vue"
 import ServiceView from "../views/ServiceView.vue"
 import SignupView from "../views/SignupView.vue" 
+import dashboardContent from "../dashboard/dashboardContent.vue"
+import DashboardContent from "../dashboard/dashboardContent.vue"
 
 const routes = [
   {
@@ -49,7 +51,11 @@ const routes = [
     name: "Signup",
     component: SignupView
   },
-
+   {
+    path: "/dashboard",
+    name: "Dashboard",
+    component: DashboardContent
+  },
   
 ]
 
