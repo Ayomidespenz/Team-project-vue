@@ -1,7 +1,7 @@
 <template>
     <div class="service">
     
-        <h1 style="text-align: center; padding-top: 60px; color: white; ">
+        <h1 style="text-align: center; padding-top: 60px; color: white; font-size: 30px;">
             Main Loan Service
         </h1>
 
