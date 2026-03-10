@@ -133,7 +133,6 @@ export default {
         const response = await fetch("data.json");
         const data = await response.json();
         this.users = data.users;
-        console.log(users);
       } catch (error) {
         console.error("Failed to fetch users:", error);
       }
@@ -170,6 +169,8 @@ export default {
   grid-template-columns: repeat(4, 1fr);
   gap: 24px;
   margin-bottom: 40px;
+  max-width: 100%;
+  margin-top: 50px;
 }
 
 .stat-card {
@@ -177,6 +178,7 @@ export default {
   border-radius: 4px;
   padding: 30px 24px;
   box-shadow: 0 2px 12px rgba(0, 0, 0, 0.05);
+  min-width: 0;
 }
 
 .stat-icon {

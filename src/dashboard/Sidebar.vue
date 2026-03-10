@@ -129,18 +129,15 @@
 </template>
 
 <script>
-// import Dashboard from '../../views/Dashboard'
-export default {
-  // components: { Dashboard },
-  // name: 'Navbar'
-}
+
 </script>
 
 <style scoped>
 .navbar {
     height: 90px;
     width: 100%;
-  background-color: grey;
+  background-color: white;
+  left: 60px;
   padding: 10px 20px;
   justify-content: space-evenly;
   align-items: center;
@@ -179,8 +176,8 @@ export default {
   cursor: pointer;
 }
 .side-bar{
-    width: 350px;
-    background-color: grey;
+    width: 300px;
+    background-color: white;
       border-bottom: 2px solid black;
       height: 100vh;
       position: fixed;
@@ -220,7 +217,7 @@ export default {
 .org{
 display: flex;
  gap: 10px; 
- width: 70%;
+ width: 80%;
   justify-content: center;
   border: 1px solid #88c417;
   margin: 20px auto;
@@ -242,6 +239,10 @@ display: flex;
   gap: 10px;
   padding: 8px 30px 10px;
   /* border: 2px solid #88c417; */
+}
+.user img{
+  width: 20px;
+  height: 20px;
 }
 .user:hover {
   background-color: white;
