@@ -58,7 +58,7 @@
             Dashboard
           </h2>
         </div>
-        <h2 style="padding: 15px 25px ;">CUSTOMERS</h2>
+        <h2 style="padding: 15px 25px ; font-weight: 600;">CUSTOMERS</h2>
 
         <div class="user">
           <img src="../dashboard/dashboard-img/user.png" alt="">
@@ -141,8 +141,7 @@
         <div class="user">
           <img src="../dashboard/dashboard-img/audit-log.png" alt="">
           <h2>Audit Logs</h2>
-        </div>
-        
+        </div>  
   </nav>
 </template>
 
@@ -151,15 +150,21 @@
 </script>
 
 <style scoped>
+.org-container{
+position: relative;
+
+}
 .org-box {
   display: flex;
   align-items: center;
   gap: 15px;
-  border: 1px solid #ccc;
-  padding: 10px;
   border-radius: 8px;
   width: fit-content;
   margin-left: 30px;
+position: absolute;
+top: -20px;
+
+
 }
 
 .org-box img {
@@ -202,7 +207,7 @@
     height: 90px;
     width: 100%;
   background-color: white;
-  left: 60px;
+  left: 90px;
   padding: 10px 20px;
   justify-content: space-evenly;
   align-items: center;
@@ -249,7 +254,6 @@
       top:0 ;
       overflow-y: auto;
       z-index: 2;
-      /* border: 2px solid red; */
 }
 .logo {
   gap: 10px;

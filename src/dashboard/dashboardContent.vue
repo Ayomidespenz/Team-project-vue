@@ -6,7 +6,7 @@
           <icon icon="mdi:users" />
         </div>
         <p class="stat-label">USERS</p>
-        <h2 class="stat-value">500</h2>
+        <h2 class="stat-value">{{this.users.length}}</h2>
       </div>
 
       <div class="stat-card">
@@ -14,7 +14,7 @@
           <icon icon="mdi:user" />
         </div>
         <p class="stat-label">ACTIVE USERS</p>
-        <h2 class="stat-value">171</h2>
+        <h2 class="stat-value"> {{this.users.filter(user => user.status === 'active').length}}</h2>
       </div>
 
       <div class="stat-card">
