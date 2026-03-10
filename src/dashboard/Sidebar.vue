@@ -11,6 +11,22 @@
         <li>
          <img src="../dashboard/dashboard-img/bell.png" alt="">
         </li>
+         <div class="org">
+          <img src="../dashboard/dashboard-img/organization.png" alt="">
+          <h2>Adedoyin</h2>
+          <label for="org"></label>
+          <select name="org" id="org"> 
+    <!-- <option value="Switch Organization"></option> -->
+    <option value=""><router-link to="/">
+      
+    </router-link>profile</option>
+    <option value="">settings</option>
+    <option value="">Logout</option>
+  </select>
+</div>
+
+
+
       </ul>
     </div>
   </nav>
