@@ -38,7 +38,6 @@ export default {
     CustomerSays,
     LatestPost,
     People,
-    Sidebar
   }
 }
 </script>
