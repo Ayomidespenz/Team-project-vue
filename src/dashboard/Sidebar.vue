@@ -169,7 +169,6 @@ const toggleSidebar = () => {
 <style scoped>
 .side-bar.collapsed {
   width: 80px; 
-border: 2px solid red;
 }
 .org-container{
 position: relative;
@@ -289,10 +288,6 @@ flex: 2;
   z-index: 2;
   transition: width 0.3s ease;
 }
-
-.side-bar.collapsed {
-  width: 80px;
-}
 .logo {
   gap: 10px;
   align-items: center;
@@ -370,9 +365,6 @@ display: flex;
 }
 .navbar-expanded {
   width: calc(100% - 80px);
-}
-.side-bar.collapsed {
-  width: 80px; 
 }
 .side-bar {
   width: 300px;
