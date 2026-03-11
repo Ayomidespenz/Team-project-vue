@@ -35,6 +35,13 @@ export default {
 }
 
 .main-content.collapsed {
-  margin-left: 80px;
+  margin-left: 70px;
+}
+@media screen and (max-width: 780px) {
+  .main-content.collapsed {
+  margin-left: 5px;
+  margin-top: 20px;
+}
+  
 }
 </style>

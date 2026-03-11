@@ -344,8 +344,13 @@ tbody tr:hover {
 
 /* Responsive */
 @media (max-width: 900px) {
+  .dasboard{
+    border: 1px solid red; 
+    
+  }
   .stat-cards {
     grid-template-columns: repeat(2, 1fr);
+
   }
 }
 
