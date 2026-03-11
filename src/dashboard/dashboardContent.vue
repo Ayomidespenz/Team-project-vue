@@ -92,11 +92,9 @@
                 <icon icon="mdi:dots-vertical" />
               </button>
               <div class="dropdown" v-if="activeMenu === user.id">
-                <div class="dropdown-item">
+                <div @click="viewUser(user.id)" class="dropdown-item">
                   <icon icon="mdi:eye" />
-                  <Router-link to="/userdetails/{{ user.id }}">
                   View Details   
-                  </Router-link>
                 </div>
                 <div class="dropdown-item" @click="blacklistUser(user)">
                   <icon icon="mdi:user-cancel" />
@@ -117,6 +115,7 @@
 
 <script>
 import { Icon } from "@iconify/vue";
+import router from "../router/Index";
 export default {
   data() {
     return {
@@ -150,6 +149,9 @@ export default {
       user.status = "active";
       this.activeMenu = null;
     },
+    viewUser(id){
+      router.push(`userdetails/${id}`)
+    }
   },
 };
 </script>
