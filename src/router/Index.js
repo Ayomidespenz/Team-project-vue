@@ -9,8 +9,8 @@ import ContactView from "../views/ContactView.vue"
 import AboutView from "../views/AboutView.vue"
 import ServiceView from "../views/ServiceView.vue"
 import SignupView from "../views/SignupView.vue" 
-import DashboardContent from "../dashboard/dashboardContent.vue"
 import PersonalInfo from "../dashboard/PersonalInfo.vue"
+import DashboardView from "../views/DashboardView.vue"
 
 const routes = [
   {
@@ -54,12 +54,12 @@ const routes = [
    {
     path: "/dashboard",
     name: "Dashboard",
-    component: DashboardContent
+    component: DashboardView
   },
 
  {
 
-  path: "/personalinfo/:id",
+  path: "/userdetails/:id",
   name: "personal",
   component: PersonalInfo
 

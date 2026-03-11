@@ -6,7 +6,7 @@
           <icon icon="mdi:users" />
         </div>
         <p class="stat-label">USERS</p>
-        <h2 class="stat-value">500</h2>
+        <h2 class="stat-value">{{this.users.length}}</h2>
       </div>
 
       <div class="stat-card">
@@ -14,7 +14,7 @@
           <icon icon="mdi:user" />
         </div>
         <p class="stat-label">ACTIVE USERS</p>
-        <h2 class="stat-value">171</h2>
+        <h2 class="stat-value"> {{this.users.filter(user => user.status === 'active').length}}</h2>
       </div>
 
       <div class="stat-card">
@@ -94,13 +94,15 @@
               <div class="dropdown" v-if="activeMenu === user.id">
                 <div class="dropdown-item">
                   <icon icon="mdi:eye" />
-                  View Details
+                  <Router-link to="/userdetails/{{ user.id }}">
+                  View Details   
+                  </Router-link>
                 </div>
-                <div class="dropdown-item" >
+                <div class="dropdown-item" @click="blacklistUser(user)">
                   <icon icon="mdi:user-cancel" />
                   Blacklist User
                 </div>
-                <div class="dropdown-item" >
+                <div class="dropdown-item" @click="activateUser(user)" >
                   <icon icon="mdi:user-check" />
                   Activate User
                 </div>
@@ -133,7 +135,6 @@ export default {
         const response = await fetch("data.json");
         const data = await response.json();
         this.users = data.users;
-        console.log(users);
       } catch (error) {
         console.error("Failed to fetch users:", error);
       }
@@ -141,16 +142,12 @@ export default {
     toggleMenu(id) {
       this.activeMenu = this.activeMenu === id ? null : id;
     },
-    viewDetails(user) {
-      this.activeMenu = null;
-      this.$router.push(`/users/${user.id}`);
-    },
     blacklistUser(user) {
-      user.status = "Blacklisted";
+      user.status = "blacklisted";
       this.activeMenu = null;
     },
     activateUser(user) {
-      user.status = "Active";
+      user.status = "active";
       this.activeMenu = null;
     },
   },
@@ -170,6 +167,8 @@ export default {
   grid-template-columns: repeat(4, 1fr);
   gap: 24px;
   margin-bottom: 40px;
+  max-width: 100%;
+  margin-top: 50px;
 }
 
 .stat-card {
@@ -177,6 +176,7 @@ export default {
   border-radius: 4px;
   padding: 30px 24px;
   box-shadow: 0 2px 12px rgba(0, 0, 0, 0.05);
+  min-width: 0;
 }
 
 .stat-icon {
