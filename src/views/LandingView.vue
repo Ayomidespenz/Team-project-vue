@@ -9,7 +9,7 @@
       <LatestPost/>
       <Home />
       <Footer/>
-      <Sidebar/>
+  
     </div>
 </template>
 
@@ -24,7 +24,7 @@ import DiscoverLoans from '../components/DiscoverLoans.vue';
 import CustomerSays from '../components/CustomerSays.vue';
 import LatestPost from '../components/LatestPost.vue';
 import People from '../components/People.vue';
-import Sidebar from '../dashboard/Sidebar.vue';
+
 
 
 export default {
@@ -39,7 +39,7 @@ export default {
     CustomerSays,
     LatestPost,
     People,
-    Sidebar
+    
   }
 }
 </script>
