@@ -219,9 +219,9 @@
   font-size: 14px;
 }
 
-/* RESPONSIVE */
-/* 
-@media (max-width: 900px) {
+
+
+@media screen and (min-width: 300px) and (max-width: 768px){
   .footer-top {
     grid-template-columns: 1fr;
     text-align: center;
@@ -234,6 +234,6 @@
   .footer-main {
     grid-template-columns: 1fr 1fr;
   }
-} */
+} 
 
 </style>

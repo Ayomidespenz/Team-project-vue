@@ -231,7 +231,7 @@ export default {
 }
 
 
-@media (max-width: 900px) {
+@media screen and (min-width: 300px) and (max-width: 768px) {
   .cards {
     grid-template-columns: 1fr;
   }

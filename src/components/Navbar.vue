@@ -36,7 +36,7 @@
         <ul class="nav-links">
           <li><router-link to="/" class="active" >Home</router-link></li>
           <li><router-link to="/about" class="active">About</router-link></li>
-          <li>
+          <li> 
             <router-link to="services" class="active">Services</router-link>
           </li>
           <li><router-link to="/blog" class="active">Blog</router-link></li>
@@ -56,7 +56,7 @@
         </ul>
 
         <div class="menu-btn" @click="toggleMenu">
-          <Icon icon="mdi:navbar" width="24" />
+          <Icon icon="mdi:menu" width="24" />
         </div>
       </div>
       <div v-if="isOpen" class="mobile-menu">
@@ -214,4 +214,73 @@ export default {
 .loan-day {
   color: #88c417;
 }
+
+.menu-btn{
+  display: none;
+}
+
+
+
+
+
+@media screen and (min-width: 300px) and (max-width: 768px) {
+  
+  .container{
+    flex-direction: row;
+    padding: 0 15px;
+  }
+  
+  
+  .nav-links{
+    display: none;
+  }
+
+  
+  .menu-btn{
+    display: block;
+    cursor: pointer;
+  }
+  
+  
+  .mobile-menu{
+    display: flex;
+    flex-direction: column;
+    background: #182143;
+    width: 100%;
+    padding: 20px;
+    gap: 15px;
+  }
+  
+  .mobile-menu a{
+    color: white;
+    font-weight: bold;
+  }
+  
+  
+  .top-bar .container{
+    flex-direction: column;
+    align-items: flex-start;
+  }
+  
+  .left{
+    flex-direction: column;
+    margin: 10px;
+    gap: 5px;
+  }
+  
+  .language{
+    margin: 10px;
+    padding: 10px 15px;
+  }
+  
+  .logo{
+    margin: 0;
+  }
+  
+  .loan{
+    font-size: 28px;
+  }
+  
+}
+
 </style>
