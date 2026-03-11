@@ -264,7 +264,6 @@ border: 2px solid red;
       top:0 ;
       overflow-y: auto;
       z-index: 2;
-      border: 2px solid red;
 }
 .logo {
   gap: 10px;
@@ -312,13 +311,11 @@ display: flex;
  /* margin: 0 20px; */
  background-color: rgb(140, 194, 23);
  width: 100%;
- /* justify-content: center; */
 }
 .user{
   display: flex;
   gap: 10px;
   padding: 8px 30px 10px;
-  /* border: 2px solid #88c417; */
 }
 .user img{
   width: 20px;
@@ -335,9 +332,7 @@ display: flex;
   color: #88c417;
 }
 
-/* Ensure icons stay centered when collapsed */
 .user, .dash, .org {
-  /* justify-content: center; */
   padding: 10px;
 }
 
@@ -346,16 +341,13 @@ display: flex;
   display: none;
 }
 .navbar-expanded {
-  /* left: 80px; */
   width: calc(100% - 80px);
 }
 .side-bar.collapsed {
   width: 80px; 
-  /* Width for icons only */
 }
 .side-bar {
   width: 300px;
-  transition: width 0.3s ease; /* Smooth transition */
-  /* ... existing styles ... */
+  transition: width 0.3s ease; 
 }
 </style>

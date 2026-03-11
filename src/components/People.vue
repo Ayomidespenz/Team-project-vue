@@ -133,5 +133,32 @@ padding: 10px;
     padding: 20px;
 
 }
+@media screen and (max-width: 800px) {
+    .all{
+        display: block;
+    }
+    .option{
+        width: 100%;
+        margin: 20px -120px;
+        justify-content: center;
+    }
+    .call-back{
+        display: block;
+    }
+    .request{
+        width: 100%;
+        margin-bottom: 20px;
+    }
+    .form{
+        display:flex;
+        flex-direction: column;
+        padding: 10px;
+        gap: 20px;
+    }
+    .form-section{
+        width: 100%;
+    }
+    
+}
 
 </style>
