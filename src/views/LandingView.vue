@@ -9,6 +9,7 @@
       <LatestPost/>
       <Home />
       <Footer/>
+  
     </div>
 </template>
 
@@ -25,6 +26,7 @@ import LatestPost from '../components/LatestPost.vue';
 import People from '../components/People.vue';
 
 
+
 export default {
   components: {
     Navbar,
@@ -37,6 +39,7 @@ export default {
     CustomerSays,
     LatestPost,
     People,
+    
   }
 }
 </script>

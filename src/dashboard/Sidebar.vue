@@ -169,7 +169,6 @@ const toggleSidebar = () => {
 <style scoped>
 .side-bar.collapsed {
   width: 80px; 
-border: 2px solid red;
 }
 .org-container{
 position: relative;
