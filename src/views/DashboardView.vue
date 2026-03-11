@@ -9,7 +9,7 @@
 
 <script>
 import DashboardContent from '../dashboard/dashboardContent.vue';
-import Sidebar from '../dashboard/Sidebar.vue'
+import Sidebar from '../dashboard/Sidebar.vue';
 export default {
   components: { DashboardContent, Sidebar },
   data() {

@@ -9,7 +9,7 @@ import ContactView from "../views/ContactView.vue"
 import AboutView from "../views/AboutView.vue"
 import ServiceView from "../views/ServiceView.vue"
 import SignupView from "../views/SignupView.vue" 
-import PersonalInfo from "../dashboard/PersonalInfo.vue"
+import PersonalInfo from "../views/UserView.vue"
 import DashboardView from "../views/DashboardView.vue"
 
 const routes = [
