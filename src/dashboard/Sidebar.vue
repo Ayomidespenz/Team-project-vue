@@ -1,7 +1,10 @@
 <template>
   <nav class="navbar" :class="{ 'navbar-expanded': isCollapsed }">
-          
+      <div class="navbar-left">
+        <input type="search" placeholder="Search..." class="search-input" />
+   </div>    
     <div class="navbar-right">
+
       <ul>
         <li>
           <router-link to="/docs">Docs</router-link>
@@ -142,7 +145,6 @@
   <button @click="toggleSidebar" class="toggle-btn">
     <Icon :icon="isCollapsed ? 'mdi:menu' : 'mdi:menu-open'" width="24" />
   </button>
-  <!-- <input type="search" placeholder="Search..." class="search-input" /> -->
 </div>
 
         
@@ -155,10 +157,12 @@
 import { ref } from 'vue';
 import { Icon } from '@iconify/vue';
 
+const emit = defineEmits(['toggle'])
 const isCollapsed = ref(false);
 
 const toggleSidebar = () => {
   isCollapsed.value = !isCollapsed.value;
+  emit('toggle', isCollapsed.value)
 };
 </script>
 
@@ -219,17 +223,23 @@ top: -20px;
 }
 
 .navbar {
-    height: 90px;
-    width: 100%;
+  height: 90px;
   background-color: white;
-  left: 90px;
+  left: 300px;
+  width: calc(100% - 300px);
   padding: 10px 20px;
   justify-content: space-evenly;
   align-items: center;
   display: flex;
   position: fixed;
-  top:0 ;
+  top: 0;
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  transition: left 0.3s ease, width 0.3s ease;
+}
+
+.navbar-expanded {
+  left: 80px;
+  width: calc(100% - 80px);
 }
 
 .search-input {
@@ -237,6 +247,12 @@ top: -20px;
   padding: 10px;
   border: 1px solid #ddd;
   border-radius: 5px;
+}
+.navbar-right{
+flex: 1;
+}
+.navbar-left{
+flex: 2;
 }
 
 .navbar-right ul {
@@ -254,21 +270,28 @@ top: -20px;
 .navbar-right a {
   text-decoration: none;
   color: #333;
+
 }
+
 
 .navbar-right i {
   font-size: 18px;
   cursor: pointer;
 }
-.side-bar{
-    width: 300px;
-    background-color: white;
-      border-bottom: 2px solid black;
-      height: 100vh;
-      position: fixed;
-      top:0 ;
-      overflow-y: auto;
-      z-index: 2;
+.side-bar {
+  width: 300px;
+  background-color: white;
+  border-right: 1px solid #f0f0f0;
+  height: 100vh;
+  position: fixed;
+  top: 0;
+  overflow-y: auto;
+  z-index: 2;
+  transition: width 0.3s ease;
+}
+
+.side-bar.collapsed {
+  width: 80px;
 }
 .logo {
   gap: 10px;

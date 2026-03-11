@@ -94,7 +94,9 @@
               <div class="dropdown" v-if="activeMenu === user.id">
                 <div class="dropdown-item">
                   <icon icon="mdi:eye" />
-                  View Details
+                  <Router-link to="/userdetails/{{ user.id }}">
+                  View Details   
+                  </Router-link>
                 </div>
                 <div class="dropdown-item" @click="blacklistUser(user)">
                   <icon icon="mdi:user-cancel" />
@@ -139,10 +141,6 @@ export default {
     },
     toggleMenu(id) {
       this.activeMenu = this.activeMenu === id ? null : id;
-    },
-    viewDetails(user) {
-      this.activeMenu = null;
-      this.$router.push(`/users/${user.id}`);
     },
     blacklistUser(user) {
       user.status = "blacklisted";
