@@ -1,16 +1,19 @@
 <template>
   <nav class="navbar" :class="{ 'navbar-expanded': isCollapsed }">
       <div class="navbar-left">
-        <input type="search" placeholder="Search..." class="search-input" />
-   </div>    
+      </div>    
+      <button @click="toggleSidebar" class="hamburger-menu">
+        <Icon :icon="isCollapsed ? 'mdi:menu' : 'mdi:close'" width="30" />
+      </button>
+      <input type="search" placeholder="Search..." class="search-input" />
+      <div v-if="!isCollapsed" class="sidebar-overlay" @click="toggleSidebar"></div>
     <div class="navbar-right">
-
       <ul>
         <li>
-          <router-link to="/docs">Docs</router-link>
+          <router-link class="doc" to="/docs">Docs</router-link>
         </li>
         <li>
-         <img src="../dashboard/dashboard-img/bell.png" alt="">
+         <img class="doc" src="../dashboard/dashboard-img/bell.png" alt="">
         </li>
          <div class="org-container">
   <div class="org-box">
@@ -29,6 +32,7 @@
  </ul>
     </div>
   </nav>
+  
  
   <nav class="side-bar" :class="{ 'collapsed': isCollapsed }">
     <div class="logo">
@@ -158,12 +162,12 @@ import { ref } from 'vue';
 import { Icon } from '@iconify/vue';
 
 const emit = defineEmits(['toggle'])
-const isCollapsed = ref(false);
-
+const isCollapsed = ref(window.innerWidth < 768); 
 const toggleSidebar = () => {
   isCollapsed.value = !isCollapsed.value;
   emit('toggle', isCollapsed.value)
 };
+
 </script>
 
 <style scoped>
@@ -287,10 +291,7 @@ flex: 2;
   overflow-y: auto;
   z-index: 2;
   transition: width 0.3s ease;
-}
-
-.side-bar.collapsed {
-  width: 80px;
+  
 }
 .logo {
   gap: 10px;
@@ -338,13 +339,12 @@ display: flex;
  /* margin: 0 20px; */
  background-color: rgb(140, 194, 23);
  width: 100%;
- /* justify-content: center; */
 }
 .user{
   display: flex;
   gap: 10px;
   padding: 8px 30px 10px;
-  /* border: 2px solid #88c417; */
+  
 }
 .user img{
   width: 20px;
@@ -361,27 +361,111 @@ display: flex;
   color: #88c417;
 }
 
-/* Ensure icons stay centered when collapsed */
 .user, .dash, .org {
-  /* justify-content: center; */
   padding: 10px;
 }
 
 .side-bar.collapsed h2, 
 .side-bar.collapsed select {
   display: none;
+  
 }
 .navbar-expanded {
-  /* left: 80px; */
   width: calc(100% - 80px);
-}
-.side-bar.collapsed {
-  width: 80px; 
-  /* Width for icons only */
 }
 .side-bar {
   width: 300px;
-  transition: width 0.3s ease; /* Smooth transition */
-  /* ... existing styles ... */
+  transition: width 0.3s ease; 
+  
+}
+
+@media (max-width: 767px) {
+  .hamburger-menu {
+    display: block !important; /* Ensure burger is visible */
+    /* z-index: 1100; */
+    margin-left: -450px;
+    /* border: 2px solid red; */
+  }
+  .toggle-btn{
+    display: none;
+  }
+
+  .search-input{
+    display: none;
+  }
+  .doc{
+    display: none;
+  }
+
+
+  /* On mobile, 'collapsed' means 'off-screen' */
+  .side-bar.collapsed { /* Keep it wide for when it slides in */
+    transform: translateX(-100%);
+    display: none;
+    
+  }
+
+  .side-bar:not(.collapsed) {
+    width: 250px;
+    transform: translateX(0);
+    box-shadow: 5px 0 15px rgba(0,0,0,0.1);
+  }
+
+  .navbar {
+    left: 0 !important;
+    width: 100% !important;
+  }
+
+  .sidebar-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0,0,0,0.5);
+    z-index: 999;
+  }
+}
+
+/* --- 3. DESKTOP NAVBAR ADJUSTMENTS --- */
+@media (min-width: 768px) {
+  .hamburger-menu {
+    display: none; /* Hide hamburger on large screens */
+  }
+
+  .navbar {
+    left: 300px;
+    width: calc(100% - 300px);
+  }
+
+  .navbar-expanded {
+    left: 80px;
+    width: calc(100% - 80px);
+  }
+}
+
+/* --- 4. OTHER UI FIXES --- */
+.hamburger-menu {
+  background: none;
+  border: none;
+  cursor: pointer;
+  margin-right: 15px;
+  color: #213f7d;
+  display: none;
+}
+
+.logo {
+  display: flex;
+  align-items: center;
+  padding: 20px;
+  border-bottom: 1px solid #eee;
+  overflow: hidden;
+}
+
+/* Hide text labels when collapsed on Desktop */
+.side-bar.collapsed h2, 
+.side-bar.collapsed .loan,
+.side-bar.collapsed hr {
+  display: none;
 }
 </style>
