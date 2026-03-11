@@ -96,6 +96,9 @@
 <script setup>
    
 import { ref, onMounted } from 'vue'
+import { useRoute } from 'vue-router'
+
+const route = useRoute()
 
 const user = ref({
   fullName:     'Loading...',   
@@ -127,6 +130,13 @@ const tabs = ref([
 
 const activeTab = ref('general')
 
+const getUserId = () =>{
+    return route.params.id
+}
+
+
+console.log(getUserId());
+
 const loadUserData = async () => {
   try {
     const response = await fetch('/data.json')
@@ -138,9 +148,9 @@ const loadUserData = async () => {
     const data = await response.json()
 
     // Update only fields that exist in the JSON
-    user.value.fullName   = data.users[0].name     ?? user.value.name
-    user.value.phoneNumber  = data.phoneNumber  ?? user.value.phoneNumber
-    user.value.emailAddress = data.emailAddress ?? user.value.emailAddress
+    user.value.fullName   = data.users[getUserId()].name     ?? user.value.name
+    user.value.phoneNumber  = data.users[getUserId()].phone  ?? user.value.phoneNumber
+    user.value.emailAddress = data.users[getUserId()].email ?? user.value.emailAddress
     user.value.address      = data.address      ?? user.value.address
 
    
