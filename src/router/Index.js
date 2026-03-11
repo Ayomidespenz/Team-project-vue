@@ -9,8 +9,8 @@ import ContactView from "../views/ContactView.vue"
 import AboutView from "../views/AboutView.vue"
 import ServiceView from "../views/ServiceView.vue"
 import SignupView from "../views/SignupView.vue" 
-import dashboardContent from "../dashboard/dashboardContent.vue"
 import DashboardContent from "../dashboard/dashboardContent.vue"
+import PersonalInfo from "../dashboard/PersonalInfo.vue"
 
 const routes = [
   {
@@ -56,7 +56,16 @@ const routes = [
     name: "Dashboard",
     component: DashboardContent
   },
-  
+
+ {
+
+  path: "/personalinfo/:id",
+  name: "personal",
+  component: PersonalInfo
+
+ },
+
+
 ]
 
 const router = createRouter({

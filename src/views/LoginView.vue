@@ -2,6 +2,7 @@
     <div>
         <Navbar />
         <login />  
+        <PersonalInfo/>
         <Footer />
         
     </div>
@@ -12,12 +13,14 @@ import login from '../auth/login.vue';
 import Navbar from '../components/Navbar.vue';
 import Footer from '../components/Footer.vue';
 import Signup from '../auth/Signup.vue';
+import PersonalInfo from '../dashboard/PersonalInfo.vue';
 export default {
     components: {
         login,
         Navbar,
         Footer,
-        Signup
+        Signup,
+        PersonalInfo
         
 
     }
