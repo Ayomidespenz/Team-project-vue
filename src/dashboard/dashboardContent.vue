@@ -6,7 +6,7 @@
           <icon icon="mdi:users" />
         </div>
         <p class="stat-label">USERS</p>
-        <h2 class="stat-value">{{this.users.length}}</h2>
+        <h2 class="stat-value">{{ this.users.length }}</h2>
       </div>
 
       <div class="stat-card">
@@ -14,7 +14,9 @@
           <icon icon="mdi:user" />
         </div>
         <p class="stat-label">ACTIVE USERS</p>
-        <h2 class="stat-value"> {{this.users.filter(user => user.status === 'active').length}}</h2>
+        <h2 class="stat-value">
+          {{ this.users.filter((user) => user.status === "active").length }}
+        </h2>
       </div>
 
       <div class="stat-card">
@@ -95,14 +97,14 @@
                 <div class="dropdown-item">
                   <icon icon="mdi:eye" />
                   <Router-link to="/userdetails/{{ user.id }}">
-                  View Details   
+                    View Details
                   </Router-link>
                 </div>
                 <div class="dropdown-item" @click="blacklistUser(user)">
                   <icon icon="mdi:user-cancel" />
                   Blacklist User
                 </div>
-                <div class="dropdown-item" @click="activateUser(user)" >
+                <div class="dropdown-item" @click="activateUser(user)">
                   <icon icon="mdi:user-check" />
                   Activate User
                 </div>
@@ -338,7 +340,6 @@ tbody tr:hover {
 .dropdown-item:hover {
   background: #f9fafb;
 }
-
 
 /* Responsive */
 @media (max-width: 900px) {
