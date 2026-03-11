@@ -1,7 +1,8 @@
 <template>
   <div class="user-details">
     <div class="header">
-      <a href="#" class="back-link">← Back to Users</a>
+      
+      <router-link  to="/dashboard"> ← Back to Users</router-link>
       <h1>User Details</h1>
       <div class="actions">
         <button class="blacklist-btn">BLACKLIST USER</button>
