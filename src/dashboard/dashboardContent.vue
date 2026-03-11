@@ -77,7 +77,7 @@
           </tr>
         </thead>
         <tbody>
-          <tr v-for="user in users" :key="user.id">
+          <tr v-for="user in paginatedUsers" :key="user.id">
             <td>{{ user.organization }}</td>
             <td>{{ user.name }}</td>
             <td>{{ user.email }}</td>
@@ -113,6 +113,44 @@
       </table>
     </div>
   </div>
+<!-- pagination -->
+   <div class="pagination">
+      <div class="pagination-info">
+        Showing
+        <select v-model="pageSize" @change="currentPage = 1">
+          <option :value="10">10</option>
+          <option :value="25">25</option>
+          <option :value="50">50</option>
+          <option :value="100">100</option>
+        </select>
+        out of {{ users.length }}
+      </div>
+
+      <div class="pagination-controls">
+        <button @click="currentPage = 1" :disabled="currentPage === 1">
+          <Icon icon="mdi:chevron-double-left" />
+        </button>
+        <button @click="currentPage--" :disabled="currentPage === 1">
+          <Icon icon="mdi:chevron-left" />
+        </button>
+
+        <button
+          v-for="page in visiblePages"
+          :key="page"
+          @click="currentPage = page"
+          :class="{ active: currentPage === page }"
+        >
+          {{ page }}
+        </button>
+
+        <button @click="currentPage++" :disabled="currentPage === totalPages">
+          <Icon icon="mdi:chevron-right" />
+        </button>
+        <button @click="currentPage = totalPages" :disabled="currentPage === totalPages">
+          <Icon icon="mdi:chevron-double-right" />
+        </button>
+      </div>
+    </div>
 </template>
 
 <script>
@@ -123,13 +161,35 @@ export default {
     return {
       users: [],
       activeMenu: null,
+       currentPage: 1,
+      pageSize: 10,
     };
   },
 
   mounted() {
     this.fetchUsers();
   },
+ computed: {
+    totalPages() {
+      return Math.ceil(this.users.length / this.pageSize);
+    },
 
+    paginatedUsers() {
+      const start = (this.currentPage - 1) * this.pageSize;
+      const end = start + this.pageSize;
+      return this.users.slice(start, end);
+    },
+
+    visiblePages() {
+      const pages = [];
+      const start = Math.max(1, this.currentPage - 2);
+      const end = Math.min(this.totalPages, this.currentPage + 2);
+      for (let i = start; i <= end; i++) {
+        pages.push(i);
+      }
+      return pages;
+    },
+  },
   methods: {
     async fetchUsers() {
       try {
@@ -342,6 +402,63 @@ tbody tr:hover {
 .dropdown-item:hover {
   background: #f9fafb;
 }
+.pagination {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 20px 4px;
+  font-size: 0.875rem;
+  color: #545f7d;
+}
+
+.pagination-info {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.pagination-info select {
+  border: 1px solid #e0e0e0;
+  border-radius: 4px;
+  padding: 4px 8px;
+  color: #213f7d;
+  font-size: 0.875rem;
+  cursor: pointer;
+}
+
+.pagination-controls {
+  display: flex;
+  align-items: center;
+  gap: 4px;
+}
+
+.pagination-controls button {
+  min-width: 32px;
+  height: 32px;
+  padding: 0 8px;
+  border: none;
+  border-radius: 4px;
+  background: #f0f0f0;
+  color: #545f7d;
+  font-size: 0.875rem;
+  cursor: pointer;
+  transition: background 0.15s;
+}
+
+.pagination-controls button:hover:not(:disabled) {
+  background: #e0e0e0;
+}
+
+.pagination-controls button.active {
+  background: #213f7d;
+  color: white;
+  font-weight: 600;
+}
+
+.pagination-controls button:disabled {
+  opacity: 0.4;
+  cursor: not-allowed;
+}
 
 /* Responsive */
 @media (max-width: 900px) {
@@ -354,5 +471,6 @@ tbody tr:hover {
   .stat-cards {
     grid-template-columns: 1fr;
   }
+   .pagination { flex-direction: column; gap: 12px; }
 }
 </style>
