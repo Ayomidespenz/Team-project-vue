@@ -221,7 +221,7 @@
 
 
 
-@media screen and (min-width: 300px) and (max-width: 768px){
+@media screen and (min-width: 480px) and (max-width: 768px){
   .footer-top {
     grid-template-columns: 1fr;
     text-align: center;
