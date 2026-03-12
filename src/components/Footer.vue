@@ -221,20 +221,68 @@
 
 
 
-@media screen and (min-width: 480px) and (max-width: 768px){
+@media screen and (min-width: 300px) and (max-width: 768px){
+   .footer-top {
+    grid-template-columns: 1fr 1fr;
+    text-align: center;
+    gap: 30px;
+  }
+
+  .contact {
+    grid-column: span 2;
+    text-align: center;
+  }
+
+  .footer-main {
+    grid-template-columns: 1fr 1fr;
+    gap: 30px;
+  }
+
+  .brand p {
+    max-width: 100%;
+  }
+}
+
+
+/* Mobile Phones */
+@media (max-width: 600px) {
+
   .footer-top {
     grid-template-columns: 1fr;
     text-align: center;
+    gap: 20px;
   }
 
   .contact {
     text-align: center;
   }
 
-  .footer-main {
-    grid-template-columns: 1fr 1fr;
-    gap: 18px;
+  .phone {
+    font-size: 24px;
   }
-} 
+
+  .footer-main {
+    grid-template-columns: 1fr;
+    text-align: center;
+    gap: 30px;
+  }
+
+  .logo {
+    font-size: 32px;
+  }
+
+  .footer-bottom {
+    flex-direction: column;
+    text-align: center;
+    gap: 10px;
+  }
+
+  .legal {
+    justify-content: center;
+    flex-wrap: wrap;
+  }
+
+}
+
 
 </style>
