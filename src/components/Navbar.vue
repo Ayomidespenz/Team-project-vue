@@ -62,7 +62,7 @@
       <div v-if="isOpen" class="mobile-menu">
         <router-link to="/" @click="toggleMenu">Home</router-link>
         <router-link to="/about" @click="toggleMenu">About</router-link>
-        <router-link to="/servives" @click="toggleMenu">Services</router-link>
+        <router-link to="/services" @click="toggleMenu">Services</router-link>
         <router-link to="/blog" @click="toggleMenu">Blog</router-link>
         <router-link to="/contact" @click="toggleMenu">Contact</router-link>
         <router-link to="/login" @click="toggleMenu">Login</router-link>
