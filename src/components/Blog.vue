@@ -135,10 +135,10 @@
       <div class="sidebar-section">
         <h4>Follow Us</h4>
         <div class="socials">
-          <a href="#" class="social-icon fb">f</a>
-          <a href="#" class="social-icon tw">t</a>
-          <a href="#" class="social-icon ig">in</a>
-          <a href="#" class="social-icon yt">▶</a>
+          <a href="#" class="social-icon fb"><Icon icon="mdi:facebook"/></a>
+          <a href="#" class="social-icon tw"><Icon icon="mdi:twitter"/></a>
+          <a href="#" class="social-icon ig"><Icon icon="mdi:linkedin"/></a>
+          <a href="#" class="social-icon yt"><Icon icon="mdi:youtube"/></a>
         </div>
       </div>
 
@@ -476,6 +476,10 @@ export default {
   }
 
   .tag {
+    font-size: 10px;
+    padding: 6px 12px;
+  }
+  .tag{
     font-size: 10px;
     padding: 6px 12px;
   }
