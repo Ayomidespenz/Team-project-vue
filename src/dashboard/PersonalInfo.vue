@@ -365,4 +365,90 @@ p {
   color: #2c3e50;
 }
 
+
+
+
+
+
+
+/* 
+@media (max-width: 768px) {
+
+  .user-details {
+    padding: 15px;
+  } */
+
+
+  /* .header {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 10px;
+  }
+
+  .actions {
+    width: 100%;
+    justify-content: flex-start;
+  } */
+
+/* 
+  .user-card {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 15px;
+  }
+
+  .avatar {
+    margin-bottom: 10px;
+  }
+
+  .tier {
+    margin: 0;
+    text-align: left;
+  }
+
+  .balance {
+    text-align: left;
+  } */
+
+/*   
+  .tabs {
+    overflow-x: auto;
+    white-space: nowrap;
+  }
+
+  .tabs button {
+    padding: 10px 15px;
+    font-size: 14px;
+  } */
+
+/*   
+  .row {
+    flex-direction: column;
+    gap: 15px;
+  }
+
+  .field {
+    margin-right: 0;
+  }
+
+} */
+
+/* 
+@media (max-width: 300px) {
+
+  h1 {
+    font-size: 20px;
+  }
+
+  .actions button {
+    width: 100%;
+  }
+
+  .avatar .circle {
+    width: 50px;
+    height: 50px;
+    font-size: 20px;
+  }
+
+} */
 </style>
