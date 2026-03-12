@@ -6,7 +6,7 @@
     </div>
     <div class="login">
     <div class="sm:mx-auto sm:w-full sm:max-w-sm">
-      <h2 class="mt-10 text-center text-2xl/9 font-bold tracking-tight text-black">Sign in to your account</h2>
+      <h2 class="mt-10 text-center text-2xl/9 font-bold tracking-tight text-black">Log in to your account</h2>
     </div>
 
     <div class="mt-10 sm:mx-auto sm:w-full sm:max-w-sm">
@@ -32,7 +32,7 @@
 
         <div>
           <router-link to="/Dashboard">
-              <button type="submit" class="flex w-full justify-center rounded-md bg-[#7ed321] px-3 py-1.5 text-sm/6 font-semibold text-white hover:bg-[#7ed321] focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-500">Sign in</button>
+              <button type="submit" class="flex w-full justify-center rounded-md bg-[#7ed321] px-3 py-1.5 text-sm/6 font-semibold text-white hover:bg-[#7ed321] focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-500">Log in</button>
           </router-link>
         
         </div>
@@ -61,4 +61,10 @@
   flex: 1;
 }
 
+
+@media (max-width: 900px){
+  .login-image{
+    display: none;
+  }
+}
 </style>

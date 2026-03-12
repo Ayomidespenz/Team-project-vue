@@ -258,8 +258,8 @@ export default {
   
   
   .top-bar .container{
-    flex-direction: column;
-    align-items: flex-start;
+    display: none;
+    
   }
   
   .left{

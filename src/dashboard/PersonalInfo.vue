@@ -1,8 +1,7 @@
 <template>
   <div class="user-details">
     <div class="header">
-      
-      <router-link  to="/dashboard"> ← Back to Users</router-link>
+      <router-link to="/dashboard"> ← Back to Users</router-link>
       <h1>User Details</h1>
       <div class="actions">
         <button class="blacklist-btn">BLACKLIST USER</button>
@@ -15,19 +14,26 @@
         <div class="circle">M</div>
       </div>
       <div class="info">
-        <h2>{{ user.fullName || '—' }}</h2>
-        <p>{{ user.id || '—' }}</p>
+        <h2>{{ user.fullName || "—" }}</h2>
+        <p>{{ user.id || "—" }}</p>
       </div>
       <div class="tier">
         <p>User's Tier</p>
         <div class="stars">
-          <span v-for="i in Math.min(user.tier, 3)" :key="i" class="star filled">★</span>
-          <span v-for="i in Math.max(0, 3 - user.tier)" :key="'e'+i" class="star">☆</span>
+          <span v-for="i in Math.min(user.tier, 3)" :key="i" class="star filled"
+            >★</span
+          >
+          <span
+            v-for="i in Math.max(0, 3 - user.tier)"
+            :key="'e' + i"
+            class="star"
+            >☆</span
+          >
         </div>
       </div>
       <div class="balance">
-        <h2>{{ user.balance || '₦0.00' }}</h2>
-        <p>{{ user.account || '—' }}</p>
+        <h2>{{ user.balance || "₦0.00" }}</h2>
+        <p>{{ user.account || "—" }}</p>
       </div>
     </div>
 
@@ -49,37 +55,37 @@
           <div class="row">
             <div class="field">
               <label>Full Name</label>
-              <p>{{ user.fullName || '—' }}</p>
+              <p>{{ user.fullName || "—" }}</p>
             </div>
             <div class="field">
               <label>Phone Number</label>
-              <p>{{ user.phoneNumber || '—' }}</p>
+              <p>{{ user.phoneNumber || "—" }}</p>
             </div>
             <div class="field">
               <label>Email Address</label>
-              <p>{{ user.emailAddress || '—' }}</p>
+              <p>{{ user.emailAddress || "—" }}</p>
             </div>
             <div class="field">
               <label>BVN</label>
-              <p>{{ personal.bvn || '—' }}</p>
+              <p>{{ personal.bvn || "—" }}</p>
             </div>
           </div>
           <div class="row">
             <div class="field">
               <label>Gender</label>
-              <p>{{ personal.gender || '—' }}</p>
+              <p>{{ personal.gender || "—" }}</p>
             </div>
             <div class="field">
               <label>Marital Status</label>
-              <p>{{ personal.maritalStatus || '—' }}</p>
+              <p>{{ personal.maritalStatus || "—" }}</p>
             </div>
             <div class="field">
               <label>Children</label>
-              <p>{{ personal.children || '—' }}</p>
+              <p>{{ personal.children || "—" }}</p>
             </div>
             <div class="field">
               <label>Type of Residence</label>
-              <p>{{ personal.typeOfResidence || '—' }}</p>
+              <p>{{ personal.typeOfResidence || "—" }}</p>
             </div>
           </div>
         </div>
@@ -95,92 +101,90 @@
 </template>
 
 <script setup>
-   
-import { ref, onMounted } from 'vue'
-import { useRoute } from 'vue-router'
+import { ref, onMounted } from "vue";
+import { useRoute } from "vue-router";
+import axios from "axios";
 
-const route = useRoute()
+const route = useRoute();
 
 const user = ref({
-  fullName:     'Loading...',   
-  phoneNumber:  '—',
-  emailAddress: '—',
-  address:      '—',
-  id:           '—',
-  tier:         1,
-  balance:      '₦0.00',
-  account:      '—'
-})
+  fullName: "Loading...",
+  phoneNumber: "—",
+  emailAddress: "—",
+  address: "—",
+  id: "—",
+  tier: 1,
+  balance: "₦0.00",
+  account: "—",
+});
 
 const personal = ref({
-  bvn:               '—',
-  gender:            '—',
-  maritalStatus:     '—',
-  children:          '—',
-  typeOfResidence:   '—'
-})
+  bvn: "—",
+  gender: "—",
+  maritalStatus: "—",
+  children: "—",
+  typeOfResidence: "—",
+});
 
 const tabs = ref([
-  { id: 'general',   label: 'General Details' },
-  { id: 'documents', label: 'Documents' },
-  { id: 'bank',      label: 'Bank Details' },
-  { id: 'loans',     label: 'Loans' },
-  { id: 'savings',   label: 'Savings' },
-  { id: 'app',       label: 'App and System' }
-])
+  { id: "general", label: "General Details" },
+  { id: "documents", label: "Documents" },
+  { id: "bank", label: "Bank Details" },
+  { id: "loans", label: "Loans" },
+  { id: "savings", label: "Savings" },
+  { id: "app", label: "App and System" },
+]);
 
-const activeTab = ref('general')
+const activeTab = ref("general");
 
-const getUserId = () =>{
-    return route.params.id
-}
-
-
-console.log(getUserId());
+const getUserId = () => {
+  return route.params.id;
+};
 
 const loadUserData = async () => {
   try {
-    const response = await fetch('/data.json')
+    const response = await axios.get("/data.json");
 
-    if (!response.ok) {
-      throw new Error(`Failed to load data.json: ${response.status} ${response.statusText}`)
-    }
-
-    const data = await response.json()
+    const details = response.data.users;
 
     // Update only fields that exist in the JSON
-    user.value.fullName   = data.users[getUserId()].name     ?? user.value.name
-    user.value.phoneNumber  = data.users[getUserId()].phone  ?? user.value.phoneNumber
-    user.value.emailAddress = data.users[getUserId()].email ?? user.value.emailAddress
-    user.value.address      = data.address      ?? user.value.address
-
-   
-
+    user.value.fullName = details[getUserId()].name ?? user.value.name;
+    user.value.phoneNumber =
+      details[getUserId()].phone ?? user.value.phoneNumber;
+    user.value.emailAddress =
+      details[getUserId()].email ?? user.value.emailAddress;
+    user.value.address = details.address ?? user.value.address;
   } catch (err) {
-    console.error('Could not load user data:', err)
-    
+    console.error("Could not load user data:", err);
   }
-}
+};
 
 const generateRandomPersonal = () => {
-  personal.value.bvn = String(Math.floor(1000000000 + Math.random() * 9000000000))
-  personal.value.gender = ['Male', 'Female'][Math.floor(Math.random() * 2)]
-  personal.value.maritalStatus = ['Single', 'Married', 'Divorced', 'Widowed'][Math.floor(Math.random() * 4)]
-  personal.value.children = ['None', '1', '2', '3', '4+'][Math.floor(Math.random() * 5)]
-  personal.value.typeOfResidence = ['Rented Apartment', 'Owned House', 'Family Home', 'Other'][Math.floor(Math.random() * 4)]
-}
+  personal.value.bvn = String(
+    Math.floor(1000000000 + Math.random() * 9000000000),
+  );
+  personal.value.gender = ["Male", "Female"][Math.floor(Math.random() * 2)];
+  personal.value.maritalStatus = ["Single", "Married", "Divorced", "Widowed"][
+    Math.floor(Math.random() * 4)
+  ];
+  personal.value.children = ["None", "1", "2", "3", "4+"][
+    Math.floor(Math.random() * 5)
+  ];
+  personal.value.typeOfResidence = [
+    "Rented Apartment",
+    "Owned House",
+    "Family Home",
+    "Other",
+  ][Math.floor(Math.random() * 4)];
+};
 
 onMounted(() => {
-  loadUserData()
-  generateRandomPersonal()
-})
+  loadUserData();
+  generateRandomPersonal();
+});
 </script>
 
-
-
-
-<style  scoped>
-
+<style scoped>
 .user-details {
   font-family: Arial, sans-serif;
   max-width: 1200px;
@@ -315,7 +319,7 @@ h1 {
 }
 
 .tabs button.active::after {
-  content: '';
+  content: "";
   position: absolute;
   bottom: -1px;
   left: 0;
