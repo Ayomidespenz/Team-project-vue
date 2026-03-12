@@ -233,6 +233,7 @@
 
   .footer-main {
     grid-template-columns: 1fr 1fr;
+    gap: 18px;
   }
 } 
 
