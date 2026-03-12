@@ -280,6 +280,9 @@ export default {
   .loan{
     font-size: 28px;
   }
+  .top-bar{
+    display: none;
+  }
   
 }
 
