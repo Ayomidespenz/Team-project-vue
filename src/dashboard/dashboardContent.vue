@@ -156,6 +156,7 @@
 <script>
 import { Icon } from "@iconify/vue";
 import router from "../router/Index";
+import axios from "axios";
 export default {
   data() {
     return {
@@ -182,7 +183,7 @@ export default {
 
     visiblePages() {
       const pages = [];
-      const start = Math.max(1, this.currentPage - 2);
+      const start = Math.max(1, this.currentPage -2);
       const end = Math.min(this.totalPages, this.currentPage + 2);
       for (let i = start; i <= end; i++) {
         pages.push(i);
@@ -193,9 +194,8 @@ export default {
   methods: {
     async fetchUsers() {
       try {
-        const response = await fetch("data.json");
-        const data = await response.json();
-        this.users = data.users;
+        const response = await axios.get("data.json");
+        this.users = response.data.users;
       } catch (error) {
         console.error("Failed to fetch users:", error);
       }

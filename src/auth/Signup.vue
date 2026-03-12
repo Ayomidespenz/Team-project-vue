@@ -65,4 +65,9 @@
   flex: 1;
 }
 
+@media (max-width: 900px){
+  .login-image{
+    display: none;
+  }
+}
 </style>

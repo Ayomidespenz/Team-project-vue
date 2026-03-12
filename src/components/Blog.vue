@@ -409,4 +409,76 @@ export default {
 .tw { background: #1da1f2; }
 .ig { background: #0077b5; }
 .yt { background: #ff0000; }
+
+
+@media (max-width: 900px) {
+  .blog-wrapper {
+    flex-direction: column;
+    padding: 40px 24px;
+    gap: 20px;
+  }
+
+  .blog-right {
+    min-width: unset;
+    width: 100%;
+  }
+
+  .tags-grid {
+    gap: 6px;
+  }
+}
+@media (max-width: 600px) {
+  .blog-wrapper {
+    padding: 24px 16px;
+  }
+
+  .blog-card-body h2 {
+    font-size: 18px;
+  }
+
+  .blog-meta {
+    flex-direction: column;
+    gap: 4px;
+  }
+
+  .blog-img {
+    height: 200px;
+  }
+
+  .read-btn {
+    width: 100%;
+    text-align: center;
+    padding: 12px;
+  }
+
+  .pagination {
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+
+  .socials {
+    gap: 8px;
+  }
+
+  .social-icon {
+    width: 40px;
+    height: 40px;
+    font-size: 14px;
+  }
+
+  .recent-post img {
+    width: 60px;
+    height: 50px;
+  }
+
+  .sidebar-section h4 {
+    font-size: 15px;
+  }
+
+  .tag {
+    font-size: 10px;
+    padding: 6px 12px;
+  }
+}
+
 </style>
