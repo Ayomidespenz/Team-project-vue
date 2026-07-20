@@ -75,12 +75,12 @@
         </div>
         <div >
             <div class="form">
-            <input type="text" placeholder="Name" style="padding: 10px;">
-            <input type="text" placeholder="Email" style="padding: 10px;">
+            <input type="text" placeholder="Name" style="padding: 10px; background-color: white;">
+            <input type="text" placeholder="Email" style="padding: 10px; background-color: white;">
             </div>
             <div class="form">
-            <input type="text" placeholder="Phone" style="padding: 10px;">
-            <input type="text" placeholder="Services" style="padding: 10px;">
+            <input type="text" placeholder="Phone" style="padding: 10px; background-color: white;">
+            <input type="text" placeholder="Services" style="padding: 10px; background-color: white;">
             </div>
             <button style="padding: 10px; width: 100px; background-color: rgb(136, 196, 24); border: none; margin-left: 10px;">
                 Submit
@@ -110,7 +110,7 @@
     display: flex;
     gap: 50px;
     flex-wrap: wrap;
-    margin: 30px auto;
+    margin: 30px 170px;
 }
 .request{
     width: 40%;
@@ -132,6 +132,33 @@ padding: 10px;
     width: 100%;
     padding: 20px;
 
+}
+@media screen and (max-width: 800px) {
+    .all{
+        display: block;
+    }
+    .option{
+        width: 100%;
+        margin: 20px -120px;
+        justify-content: center;
+    }
+    .call-back{
+        display: block;
+    }
+    .request{
+        width: 100%;
+        margin-bottom: 20px;
+    }
+    .form{
+        display:flex;
+        flex-direction: column;
+        padding: 10px;
+        gap: 20px;
+    }
+    .form-section{
+        width: 100%;
+    }
+    
 }
 
 </style>

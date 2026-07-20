@@ -213,5 +213,8 @@ textarea {
   .hero-content h1 {
     font-size: 2rem;
   }
+  .offices{
+    grid-template-columns: 1fr;
+  }
 }
 </style>

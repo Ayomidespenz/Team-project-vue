@@ -1,14 +1,15 @@
 <template>
     <div>
-    <Navbar />
-    <HeroSection />
-    <OurCompany />
-    <DiscoverLoans/>
-     <People/>
-    <CustomerSays/>
-    <LatestPost/>
-    <Home />
-    <Footer/>
+      <Navbar />
+      <HeroSection />
+      <OurCompany />
+      <DiscoverLoans/>
+      <People />
+      <CustomerSays/>
+      <LatestPost/>
+      <Home />
+      <Footer/>
+  
     </div>
 </template>
 
@@ -24,6 +25,8 @@ import CustomerSays from '../components/CustomerSays.vue';
 import LatestPost from '../components/LatestPost.vue';
 import People from '../components/People.vue';
 
+
+
 export default {
   components: {
     Navbar,
@@ -35,7 +38,8 @@ export default {
     DiscoverLoans,
     CustomerSays,
     LatestPost,
-    People
+    People,
+    
   }
 }
 </script>

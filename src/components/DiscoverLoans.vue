@@ -143,4 +143,85 @@ button {
   cursor: pointer;
 }
 
+
+
+
+
+
+
+@media screen and (max-width: 1024px) {
+
+.loan-panels{
+  flex-wrap: wrap;
+  height: auto;
+}
+
+.panel{
+  flex: 1 1 50%;
+  height: 260px;
+}
+
+.panel:hover{
+  flex: 1 1 50%;
+}
+
+}
+
+
+
+
+@media screen and (max-width: 768px) {
+
+.loan-panels{
+  flex-direction: column;
+  height: auto;
+}
+
+.panel{
+  flex: none;
+  width: 100%;
+  height: 220px;
+}
+
+.panel:hover{
+  flex: none;
+}
+
+.content{
+  bottom: 20px;
+  left: 20px;
+  right: 20px;
+}
+
+h3{
+  font-size: 18px;
+}
+
+.extra p{
+  max-width: 100%;
+}
+
+}
+
+
+@media screen and (max-width: 300px){
+
+.content{
+  bottom: 15px;
+}
+
+h3{
+  font-size: 16px;
+}
+
+.extra p{
+  font-size: 13px;
+}
+
+button{
+  font-size: 13px;
+}
+
+}
+
 </style>

@@ -135,7 +135,7 @@
 }
 
 
-@media (max-width: 900px) {
+@media screen and (min-width: 300px) and (max-width: 768px) {
   .container {
     grid-template-columns: 1fr;
     gap: 40px;
