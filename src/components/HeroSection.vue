@@ -208,17 +208,86 @@ export default {
 }
 
 
-@media (max-width: 1000px) {
+@media screen and (max-width: 992px) {
   .hero-container {
     grid-template-columns: 1fr;
+    gap: 40px;
   }
 
   .loan-card {
-    max-width: 500px;
+    max-width: 520px;
+    width: 100%;
+    margin: auto;
+  }
+
+  .hero-left {
+    text-align: center;
+  }
+
+  .hero-buttons {
+    justify-content: center;
   }
 
   .hero-left h1 {
-    font-size: 48px;
+    font-size: 38px;
+  }
+}
+
+
+
+@media screen and (max-width: 768px) {
+  .hero {
+    padding: 50px 20px;
+  }
+
+  .hero-left h1 {
+    font-size: 32px;
+  }
+
+  .subtitle {
+    margin-bottom: 35px;
+  }
+
+  .hero-buttons {
+    flex-direction: column;
+    gap: 15px;
+  }
+
+  .btn {
+    width: 100%;
+  }
+
+  .row {
+    grid-template-columns: 1fr;
+  }
+
+  .full {
+    grid-column: span 1;
+  }
+
+  .loan-card h2 {
+    font-size: 24px;
+  }
+}
+
+
+
+@media screen and (max-width: 300px) {
+  .hero-left h1 {
+    font-size: 26px;
+    line-height: 1.2;
+  }
+
+  .subtitle {
+    font-size: 13px;
+  }
+
+  .loan-card {
+    padding: 20px;
+  }
+
+  .submit-btn {
+    padding: 14px;
   }
 }
 

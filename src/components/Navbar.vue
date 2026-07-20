@@ -36,43 +36,36 @@
         <ul class="nav-links">
           <li><router-link to="/" class="active" >Home</router-link></li>
           <li><router-link to="/about" class="active">About</router-link></li>
-          <li>
+          <li> 
             <router-link to="services" class="active">Services</router-link>
           </li>
           <li><router-link to="/blog" class="active">Blog</router-link></li>
-          <div class="pages">
-            <li>
-              <router-link to="pages" id="active" class="active"
-                >Pages</router-link
-              >
-            </li>
-            <div class="select">
-            <router-link to="/">Features</router-link>
-            <router-link to="">Services Details</router-link>
-            <router-link to="">Blog Details</router-link>
-            </div>
-
-          </div>
+         
 
           <li>
             <router-link to="contact" class="active">Contact</router-link>
           </li>
+             <li>
+              <router-link to="/login" id="active" class="active login"
+                >Login</router-link
+              >
+            </li>
           <li class="search active">
             <Icon icon="mdi:search" width="24" />
           </li>
         </ul>
 
         <div class="menu-btn" @click="toggleMenu">
-          <Icon icon="mdi:navbar" width="24" />
+          <Icon icon="mdi:menu" width="24" />
         </div>
       </div>
       <div v-if="isOpen" class="mobile-menu">
         <router-link to="/" @click="toggleMenu">Home</router-link>
         <router-link to="/about" @click="toggleMenu">About</router-link>
-        <router-link to="/servives" @click="toggleMenu">Services</router-link>
+        <router-link to="/services" @click="toggleMenu">Services</router-link>
         <router-link to="/blog" @click="toggleMenu">Blog</router-link>
-        <router-link to="/pages" @click="toggleMenu">Pages</router-link>
         <router-link to="/contact" @click="toggleMenu">Contact</router-link>
+        <router-link to="/login" @click="toggleMenu">Login</router-link>
       </div>
     </nav>
   </div>
@@ -124,10 +117,10 @@ export default {
   padding: 6px;
   color: #fff;
 }
-
+/* 
 .select router-link{
   display: block;
-}
+} */
 
 .top-bar {
   background: #182143;
@@ -179,6 +172,11 @@ export default {
   padding-bottom: 4px;
   
 }
+.login{
+  background-color: #88c417;
+  padding: 9px 17px;
+  border-radius: 25px;
+}
 
 .main-nav {
   background: #fdfdfd;
@@ -216,4 +214,76 @@ export default {
 .loan-day {
   color: #88c417;
 }
+
+.menu-btn{
+  display: none;
+}
+
+
+
+
+
+@media screen and (min-width: 300px) and (max-width: 768px) {
+  
+  .container{
+    flex-direction: row;
+    padding: 0 15px;
+  }
+  
+  
+  .nav-links{
+    display: none;
+  }
+
+  
+  .menu-btn{
+    display: block;
+    cursor: pointer;
+  }
+  
+  
+  .mobile-menu{
+    display: flex;
+    flex-direction: column;
+    background: #182143;
+    width: 100%;
+    padding: 20px;
+    gap: 15px;
+  }
+  
+  .mobile-menu a{
+    color: white;
+    font-weight: bold;
+  }
+  
+  
+  .top-bar .container{
+    display: none;
+    
+  }
+  
+  .left{
+    flex-direction: column;
+    margin: 10px;
+    gap: 5px;
+  }
+  
+  .language{
+    margin: 10px;
+    padding: 10px 15px;
+  }
+  
+  .logo{
+    margin: 0;
+  }
+  
+  .loan{
+    font-size: 28px;
+  }
+  .top-bar{
+    display: none;
+  }
+  
+}
+
 </style>
